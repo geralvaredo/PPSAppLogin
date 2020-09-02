@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Alta de Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input type="text" #email required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" #password required></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" (click)="onRegister(email, password)" expand="block">Registrate</ion-button>
+      </ion-col>
+    </ion-row>
+    <p class="ion-text-center">
+      <a id="errorRegister" *ngIf="errorRegister"> No se pudo dar de alta , intente nuevamente </a>
+    </p>
+  </form>
+  <ion-row>
+    <ion-col>
+      <p class="ion-text-center">
+        <a routerLink="/login">Tienes una cuenta ? </a>
+      </p>
+    </ion-col>
+  </ion-row>
+</ion-content>
